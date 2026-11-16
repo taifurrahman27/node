@@ -1,4 +1,5 @@
 import type { IncomingMessage, ServerResponse } from "http";
+import { productService } from "../service/product.service";
 
 const productController = (req:IncomingMessage, res: ServerResponse)=>{
 
@@ -22,6 +23,8 @@ const productController = (req:IncomingMessage, res: ServerResponse)=>{
             }
 
         ]
+
+        productService();
 
 res.writeHead(200, {"content-type":"application/json"});
 res.end(JSON.stringify( {Message:"Products retrieved successfully!", 
