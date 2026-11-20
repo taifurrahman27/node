@@ -8,6 +8,20 @@
         "id": 2,
         "name": "Jas's Cat",
         "price": 400
+    },
+    {
+        "id": 3,
+        "name": "Mimi's Cat",
+        "price": 350
+    },
+    {
+        "id": 4,
+        "name": "Rafi's Cat",
+        "price": 450
+    },
+    {
+        "id": 5,
+        "name": "Nila's Cat",
+        "price": 500
     }
 ]
-        

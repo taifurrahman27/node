@@ -13,7 +13,6 @@ const productController = async (req:IncomingMessage, res: ServerResponse)=>{
     const urlParams = url?.split("/");
     console.log(urlParams);
     const id= urlParams && urlParams[1]==="products"? Number(urlParams[2]):null;
-    console.log(id);
     
 
     if(url=== "/products" && method=== "GET" ){
@@ -32,7 +31,7 @@ const productController = async (req:IncomingMessage, res: ServerResponse)=>{
 
 //         ]
 
-     const products=   productService();
+const products=   productService();
 
 res.writeHead(200, {"content-type":"application/json"});
 res.end(JSON.stringify( {Message:"Products retrieved successfully!", 
@@ -45,6 +44,8 @@ res.end(JSON.stringify( {Message:"Products retrieved successfully!",
 const products=   productService();
 const product = products.find((p:IProduct)=>p.id===id);
 
+
+
 res.writeHead(200, {"content-type":"application/json"});
 res.end(JSON.stringify( {Message:"Products retrieved successfully!", 
     data : product,
@@ -52,6 +53,7 @@ res.end(JSON.stringify( {Message:"Products retrieved successfully!",
     }else if (method==="POST" && url==="/products"){
 
         const body =await bodyParser(req);
+        console.log(body);
 
     }
 
